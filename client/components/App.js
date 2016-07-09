@@ -1,3 +1,11 @@
 import React from 'react';
 
-export default () => <h1>Hello react</h1>;
+class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  render() {
+    return (
+      <h1>Hello my scaffold! ~~</h1>
+    );
+  }
+}
+
+export default App;
