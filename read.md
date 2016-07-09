@@ -1,0 +1,3 @@
+## configure redux
+
+1. 
