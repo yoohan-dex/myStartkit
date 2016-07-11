@@ -29,6 +29,13 @@ export default {
     ],
   },
   resolve: {
-    extentions: ['', 'js', 'jsx'],
+    modules: ['client', 'server', 'node_modules'],
+    extentions: ['', '.js', '.jsx', '.react.js'],
+    packgageMains: [
+      'jsnext:main',
+      'main',
+    ],
   },
+  target: 'web',
+  progress: true,
 };

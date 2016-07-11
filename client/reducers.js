@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 const initialState = {
-  article: 'yoohoo',
+  article: 'yoohoo!',
 };
 function contentReducer(state = initialState, action) {
   return initialState;

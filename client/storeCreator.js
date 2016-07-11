@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 
 import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'react-router-redux';
-
+import { fromJS } from 'immutable';
 import reducerCreator from './reducers';
 const sagaMiddleware = createSagaMiddleware();
 const devtools = window.devToolsExtension || (() => noop => noop);
