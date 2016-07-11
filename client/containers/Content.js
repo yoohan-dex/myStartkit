@@ -13,7 +13,7 @@ class Content extends Component {
 
 function mapStateToProps(state) {
   return {
-    article: state.article,
+    article: state.contentReducer.article,
   };
 }
 
