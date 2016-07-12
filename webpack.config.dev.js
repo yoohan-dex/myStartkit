@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default {
-  devtools: 'eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
     path.join(__dirname, '/client/index.js'),
@@ -25,12 +25,16 @@ export default {
         test: /\.js$/,
         include: path.join(__dirname, 'client'),
         loaders: ['react-hot', 'babel'],
+      }, {
+        test: /\.css$/,
+        include: /node_modules/,
+        loaders: ['style-loader', 'css-loader'],
       },
     ],
   },
   resolve: {
     modules: ['client', 'server', 'node_modules'],
-    extentions: ['', '.js', '.jsx', '.react.js'],
+    extensions: ['', '.js', '.jsx', '.react.js'],
     packgageMains: [
       'jsnext:main',
       'main',
