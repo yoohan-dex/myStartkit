@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import routes from './routes';
-import storeCreator from './storeCreator';
+import storeCreator from './store';
 import { selectLocationState } from './containers/App/selectors';
 
 import 'sanitize.css/sanitize.css';

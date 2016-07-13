@@ -26,11 +26,24 @@ export default {
         include: path.join(__dirname, 'client'),
         loaders: ['react-hot', 'babel'],
       }, {
+      //   test: /\.css$/,
+      //   exclude: /node_modules/,
+      //   loaders: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap',
+      // }, {
         test: /\.css$/,
         include: /node_modules/,
         loaders: ['style-loader', 'css-loader'],
+      }, {
+        test: /\.scss$/,
+        include: /node_modules/,
+        loaders: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules!sass-loader',
       },
     ],
+  },
+  sassLoader: {
+    includePaths: /node_modules/,
+    outputStyle: 'compressed',
+    sourceMap: true,
   },
   resolve: {
     modules: ['client', 'server', 'node_modules'],
