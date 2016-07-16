@@ -1,0 +1,16 @@
+
+@include breakpoint(xsmall) {
+  html, body {
+    min-width: 320px;
+  }
+}
+body {
+  background-color: #FAFBFC;
+
+	&.is-loading {
+    *, *:before, *:after {
+      @include vendor('animation', 'none !important');
+      @include vendor('transition', 'none !important');
+    }
+  }
+}

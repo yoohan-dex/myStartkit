@@ -8,7 +8,8 @@ import routes from './routes';
 import storeCreator from './store';
 import { selectLocationState } from './containers/App/selectors';
 
-import 'sanitize.css/sanitize.css';
+import './globalStyles/font.css';
+import './globalStyles/index.scss';
 const initialState = {};
 const store = storeCreator(initialState, browserHistory);
 

@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import ngrok from 'ngrok';
 import logger from './logger';
 import frontendMiddles from './middlewares/frontend';
@@ -7,7 +8,7 @@ import webpackConfig from '../webpack.config.dev';
 const isDev = process.env.NODE_ENV !== 'production';
 const useTunnel = isDev && process.env.ENABLE_TUNNEL;
 const app = express();
-
+app.use(express.static(path.resolve(__dirname, '../client/static')));
 app.use(frontendMiddles(webpackConfig));
 // app.get('/*', (req, res) => {
 //   res.sendFile(path.join(__dirname, './index.html'));
