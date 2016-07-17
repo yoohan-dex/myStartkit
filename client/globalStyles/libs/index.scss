@@ -3,3 +3,12 @@
 @import "./_functions.scss";
 @import "./_mixins.scss";
 @import "./skel.scss";
+
+@include skel-breakpoints((
+		xlarge: '(max-width: 1680px)',
+		large: '(max-width: 1367px)',
+		medium: '(max-width: 980px)',
+		small: '(max-width: 736px)',
+		xsmall: '(max-width: 480px)',
+		xxsmall: '(max-width: 360px)'
+	));

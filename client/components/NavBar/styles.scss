@@ -1,0 +1,24 @@
+
+.appBar {
+  height: 40px;
+  // background-color: $nav;
+}
+
+.tabs {
+  // background-color: $nav;
+  color: white;
+
+
+}
+.navigation {
+  box-shadow: inset 0 -1px $nav;
+}
+.pointer {
+  background-color: $button;
+}
+
+.tabItem {
+  color: white;
+  font-size: 14px;
+}
+

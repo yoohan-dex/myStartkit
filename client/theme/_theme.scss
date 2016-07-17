@@ -1,0 +1,39 @@
+// @import "~react-toolbox/lib/colors";
+// @import "~react-toolbox/lib/globals";
+
+@import "~react-toolbox/lib/colors"; // Import minimal colors
+
+$color-primary: $palette-indigo-500;
+$color-primary-dark: $palette-indigo-700;
+$color-primary-light: $palette-indigo-500;
+$color-accent: $palette-pink-a200;
+$color-accent-dark: $palette-pink-700;
+$color-primary-contrast: $color-dark-contrast;
+$color-accent-contrast: $color-dark-contrast;
+
+
+
+
+$theme-red: #CE5C60;
+$theme-gray: #6c7888;
+$theme-white: #FAFBFC;
+$font-gray: #2B3960;
+$commong-gray: #525A6F;
+
+$bg: #3F406A;
+$card: #5B608B;
+$nav: #5B608B;
+$shadow: #393953;
+$placehold: #c9bfde;
+$button: #C9BFDE;
+$small: #8CAAAF;
+$decoration: #396889;
+$transparency: #0B0B13;
+$font: #FAFBFC;
+
+$color-primary: $nav;
+$color-background: $bg;
+.appBar {
+  height: 40px;
+  background-color: $nav;
+}

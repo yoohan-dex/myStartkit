@@ -1,0 +1,40 @@
+// @import "../../globalStyles/globals";
+@import "../../globalStyles/libs/index";
+.panel {
+  background: $bg;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: _font(family);
+  @include breakpoint(large) {
+    padding: 7% 10%;
+  }
+  @include breakpoint(medium) {
+    padding: 8% 3%;
+  }
+  @include breakpoint(small) {
+    padding: 5% 1%;
+  }
+  @include breakpoint(xsmall) {
+    padding: 5% 0;
+  }
+}
+
+.layout {
+  font-size: 17pt;
+  font-weight: _font(weight);
+  line-height: 1.65;
+
+  @include breakpoint(xlarge) {
+    font-size: 14pt;
+  }
+
+  @include breakpoint(large) {
+    font-size: 13pt;
+  }
+
+  @include breakpoint(xxsmall) {
+    font-size: 11pt;
+  }
+}
