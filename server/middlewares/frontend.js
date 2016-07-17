@@ -17,7 +17,6 @@ const addDevMiddlewares = (app, options) => {
   app.use(webpackHotMiddleware(compiler));
 
   const fs = middleware.fileSystem;
-
   app.get('*', (req, res) => {
     const file = fs.readFileSync(path.join(compiler.outputPath, 'index.html'));
     res.send(file.toString());

@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default {
-  devtools: 'eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
     path.join(__dirname, '/client/index.js'),
@@ -25,12 +25,39 @@ export default {
         test: /\.js$/,
         include: path.join(__dirname, 'client'),
         loaders: ['react-hot', 'babel'],
+      }, {
+        test: /\.(css|scss)$/,
+        exclude: /globalStyles/,
+        loaders: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass',
+      }, {
+        test: /\.(eot|svg|ttf|woff|woff2)\??.*$/,
+        loader: 'url-loader?limit=50000&name=[path][name].[ext]',
+      }, {
+        test: /\.(jpg|png|gif)$/,
+        loader: 'url-loader',
+      }, {
+        test: /\.scss$/,
+        include: /globalStyles/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      }, {
+        test: /\.css$/,
+        include: /globalStyles/,
+        loaders: ['style-loader', 'css-loader'],
+      }, {
+        test: /\.scss$/,
+        include: /node_modules/,
+        loaders: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass',
       },
     ],
   },
+  sassLoader: {
+    includePaths: /client/,
+    outputStyle: 'compressed',
+    sourceMap: true,
+  },
   resolve: {
     modules: ['client', 'server', 'node_modules'],
-    extentions: ['', '.js', '.jsx', '.react.js'],
+    extensions: ['', '.js', '.jsx', '.react.js', '.scss'],
     packgageMains: [
       'jsnext:main',
       'main',

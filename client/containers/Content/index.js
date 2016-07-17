@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+import selector from './selectors';
 class Content extends Component {
   render() {
     return (
@@ -11,10 +13,6 @@ class Content extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    article: state.contentReducer.article,
-  };
-}
+const mapStateToProps = selector();
 
 export default connect(mapStateToProps)(Content);

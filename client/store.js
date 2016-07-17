@@ -4,6 +4,8 @@ import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'react-router-redux';
 import { fromJS } from 'immutable';
 import reducerCreator from './reducers';
+
+
 const sagaMiddleware = createSagaMiddleware();
 const devtools = window.devToolsExtension || (() => noop => noop);
 
@@ -22,7 +24,7 @@ export default function storeCreator(initialState = {}, history) {
 
   const store = createStore(
     reducerCreator(),
-    initialState,
+    fromJS(initialState),
     compose(...enhancers)
   );
 
